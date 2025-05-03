@@ -16,3 +16,7 @@ terminal.integrated.defaultProfile
 # 將 JSON 字串轉為 Python 物件（dict）
 [json_loads.md](./docs/json_loads.md)  
 [json_loads.py](./src/json/json_loads.py)  
+
+# 清除字串後面空格
+[rstrip.md](./docs/rstrip.md)  
+[rstrip.py](./src/string/rstrip.py)  
