@@ -41,4 +41,14 @@ class Person:
 #解決方式： 你需要將 Person 物件轉換成 dict，例如：
 arr = [vars(p) for p in [Person("Amy"), Person("Bob")]]
 
-print(colored_json(arr))
+print("1. 使用 list（最常用）\n" + colored_json(arr))
+
+
+from array import array
+arr = array('i', [1, 2, 3, 4])  # 'i' 代表整數
+print("2. 使用 array 模組（只適合數值型）\n" + str(arr))  # array('i', [1, 2, 3, 4])
+
+
+import numpy as np
+arr = np.array([1, 2, 3, 4])
+print("3. 使用 NumPy 陣列（科學運算常用）\n" + str(arr))  # [1 2 3 4]

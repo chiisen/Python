@@ -1,10 +1,11 @@
 # Python
 Python 進階實戰開發
 
-## 查看所有已安装的包
-```shell
-pip list
-```
+# 讓 code-runner 輸出到 Terminal
+GitHub Copilot 只有 `#terminalLastCommand`  
+無法取得 【輸出】視窗的訊息  
+所以調整 `code-runner.runInTerminal`  
+方便分析錯誤，不用複製貼上，省麻煩。  
 
 ## 設定預設終端機
 ```shell
@@ -12,6 +13,11 @@ terminal.integrated.defaultProfile
 ```
 `Command Prompt` 是 `cmd.exe`  
 `PowerShell` 是 `PowerShell 7.5.1`  
+
+## 查看所有已安装的包
+```shell
+pip list
+```
 
 ## 將 JSON 字串轉為 Python 物件（dict）
 [json_loads.md](./docs/json/json_loads.md)  
@@ -28,4 +34,25 @@ terminal.integrated.defaultProfile
 ## 寫 array object 的方式
 [array_object.md](./docs/array/array_object.md)  
 [array_object.py](./src/array/array_object.py)  
+
+## 用 get/set 控制網頁 session（以 Django 為例）
+
+在 Django 網頁後端開發中，可以直接透過 `request.session` 這個類似字典的物件來**存取（get）與設定（set）session 資料**：
+
+- **取得 session 值（get）：**
+  ```python
+  my_car = request.session.get('my_car', 'mini')  # 若沒設定過則預設為'mini'
+  ```
+
+- **設定 session 值（set）：**
+  ```python
+  request.session['my_car'] = 'mini'
+  ```
+
+- **刪除 session 值：**
+  ```python
+  del request.session['my_car']
+  ```
+
+這些操作只會影響目前用戶（瀏覽器）的 session 資料，安全且簡單，和操作 dict 幾乎一樣。
 
