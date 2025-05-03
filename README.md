@@ -74,4 +74,57 @@ pip list
 ## 避免使用者辨識時混淆
 [避免使用者辨識時混淆](./docs/generate_random_specify_code.md)  
 
+## 資料庫中檢查資料是否存在
+```python
+def check_group_id_duplicate(group_id):
+    found = False
+    query = "SELECT group_id FROM group_info WHERE group_id = %s;"
+    value = (group_id,)
+    center_logger.info('_CHECK_GROUP_ID_DUPLICATE:' + query % value)
+    cursor = sql.run_sql(query, value)
+    rows = cursor.fetchone()
+    if rows is not None:
+        found = True
+    return found
+```
+程式功能說明：  
+此函式用於檢查資料庫中 group_info 表是否已存在特定 group_id，若存在返回 True，否則返回 False。使用參數化查詢防止 SQL injection，並通過 center_logger 記錄檢查日誌。
+
+## 背景執行
+```python
+from flask import Flask
+from flask_apscheduler import APScheduler
+
+def daemon_start():
+    _notify_logger.info('== Restart API Service ==')
+    # daemonize('/dev/null', '/tmp/daemon.log', '/tmp/daemon.log')
+    if platform.system() != 'Windows': # 如果不是 Windows 系統（即在 Linux/Unix），可以用 daemonize 將服務變成背景行程，並將標準輸入、輸出、錯誤都導向 /dev/null，避免干擾終端機。
+        daemonize(stdin='/dev/null', 
+                 stdout='/dev/null',
+                 stderr='/dev/null')  # context = (cer, key)
+    app.run(
+        host='0.0.0.0',
+        port=5555,
+        # ssl_context=context,
+        debug=True,
+        threaded=True,
+        use_reloader=False  # 修正參數名稱應為 use_reloader
+    )
+```
+啟動 Flask 等 Web 應用，監聽所有網路介面（0.0.0.0），port 設為 5555。  
+
+threaded=True：支援多執行緒處理請求。  
+
+debug=True：開啟除錯模式（開發時用）。  
+
+use_reloader=False：不自動重新載入程式碼。  
+
+ssl_context 可選，若啟用則支援 HTTPS。  
+
+總結  
+此程式設計用來啟動 API 服務，並可選擇以 daemon（背景行程）方式執行，且可設定 log 輸出位置與 HTTPS。  
+
+實際啟動時會監聽在 0.0.0.0:5555，支援多執行緒與除錯模式。  
+
+註解部分提供進階用法（如 log、SSL、daemonize）供參考。  
 
