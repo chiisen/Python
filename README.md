@@ -63,3 +63,6 @@ pip list
 [背景執行](./docs/daemonize.md)  
 
 ## 架構分析
+[架構分析](./docs/sa.md)  
+[架構分析2](./docs/sa2.md)  
+
