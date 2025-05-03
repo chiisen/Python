@@ -1,6 +1,8 @@
 # Python
 Python 進階實戰開發
 
+---
+
 # 讓 code-runner 輸出到 Terminal
 GitHub Copilot 只有 `#terminalLastCommand`  
 無法取得 【輸出】視窗的訊息  
@@ -14,6 +16,8 @@ terminal.integrated.defaultProfile
 `Command Prompt` 是 `cmd.exe`  
 `PowerShell` 是 `PowerShell 7.5.1`  
 
+---
+
 ## 判斷是否是 Python 程式碼的方法
 可以從以下幾點判斷：
 1. 使用了 Python 風格的註解（以 `#` 開頭）
@@ -21,10 +25,14 @@ terminal.integrated.defaultProfile
 3. 使用了 Python 的內建函數 `range()`
 4. 變數命名和函數定義風格符合 Python 的慣例 `def `、變數命名前面不須型別宣告
 
+---
+
 ## 查看所有已安装的包
 ```shell
 pip list
 ```
+
+---
 
 ## 將 JSON 字串轉為 Python 物件（dict）
 [json_loads.md](./docs/json/json_loads.md)  
