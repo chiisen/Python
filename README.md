@@ -14,6 +14,13 @@ terminal.integrated.defaultProfile
 `Command Prompt` 是 `cmd.exe`  
 `PowerShell` 是 `PowerShell 7.5.1`  
 
+## 判斷是否是 Python 程式碼的方法
+可以從以下幾點判斷：
+1. 使用了 Python 風格的註解（以 `#` 開頭）
+2. 使用了 Python 的列表推導式（list comprehension）：`[random.choice(...) for i in range(6)]`
+3. 使用了 Python 的內建函數 `range()`
+4. 變數命名和函數定義風格符合 Python 的慣例 `def `、變數命名前面不須型別宣告
+
 ## 查看所有已安装的包
 ```shell
 pip list
@@ -55,4 +62,8 @@ pip list
   ```
 
 這些操作只會影響目前用戶（瀏覽器）的 session 資料，安全且簡單，和操作 dict 幾乎一樣。
+
+##　避免使用者辨識時混淆
+[避免使用者辨識時混淆](./docs/generate_random_specify_code.md)  
+
 
