@@ -30,7 +30,7 @@ pip list
 [json_loads.md](./docs/json/json_loads.md)  
 [json_loads.py](./src/json/json_loads.py)  
 
-# 清除字串後面空格
+## 清除字串後面空格
 [rstrip.md](./docs/string/rstrip.md)  
 [rstrip.py](./src/string/rstrip.py)  
 
@@ -63,7 +63,7 @@ pip list
 
 這些操作只會影響目前用戶（瀏覽器）的 session 資料，安全且簡單，和操作 dict 幾乎一樣。
 
-##　避免使用者辨識時混淆
+## 避免使用者辨識時混淆
 [避免使用者辨識時混淆](./docs/generate_random_specify_code.md)  
 
 
