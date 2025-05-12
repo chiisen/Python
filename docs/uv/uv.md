@@ -8,6 +8,11 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 scoop install uv
 ```
 
+## 更新 uv 自己的版本
+```shell
+uv self update # 更新 uv
+```
+
 ## 使用 uv 管理多個 Python 環境版本
 顯示可安裝以及已安裝的 Python 版本：
 ```shell
