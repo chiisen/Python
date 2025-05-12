@@ -4,7 +4,7 @@ Python 進階實戰開發
 ---
 
 # 使用 uv 管理 Python 環境
-[使用 uv 管理 Python 環境](./docs/uv/uv.md)
+[使用 uv 管理 Python 環境](https://github.com/chiisen/uv)
 
 ---
 
