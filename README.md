@@ -12,6 +12,36 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 ```shell
 scoop install uv
 ```
+## 使用 uv 管理多個 Python 環境版本
+顯示可安裝以及已安裝的 Python 版本：
+```shell
+uv python list
+```
+安裝最新版本:
+如果已經安裝過 Python，除非額外指定版本，否則就不會安裝
+```shell
+uv python install
+```
+指定安裝特定的版本：
+```shell
+uv python install 3.10
+```
+安裝 Python 時也可以同時指定多個版本：
+```shell
+uv python install 3.10 3.11
+```
+找到 Python 的安裝路徑：
+```shell
+uv python dir
+```
+移除已經安裝的 Python:
+```shell
+uv python uninstall 3.10
+```
+移除 Python 時也可以同時指定多個版本：
+```shell
+uv python uninstall 3.10 3.11
+```
 
 # 讓 code-runner 輸出到 Terminal
 GitHub Copilot 只有 `#terminalLastCommand`  
