@@ -55,4 +55,25 @@ uv 會依據它所可以找到的 Python 環境來執行，基本上的順序如
 3. 目前資料夾下的 .venv 資料夾內設定的虛擬環境。
 4. uv 自己安裝的 Python。
 5. 系統環境變數設定的 Python 環境。
+
 如果指定的版本不存在，uv 會自動安裝相符的 Python，因此你可以看到上述例子中雖然之前移除了 3.10 版，但仍然可以執行。
+
+如果沒有指定版本，執行 Python 程式時就會使用比較新的版本。
+
+查看已安裝的版本：
+```shell
+uv python list --only-installed
+```
+
+想要設定 uv 預設使用的 Python 版本:
+```shell
+uv python pin 3.10
+```
+設定之後，如果再執行 Python 程式，就會改用剛剛指定的版本。  
+[.python-version](../../.python-version)  
+在當前資料夾下建立一個 `.python-version` 檔案，並在其中記錄指定的版本。  
+這個檔案只對所在的資料夾有效，如果離開這個資料夾，就沒有效果了。  
+uv 並沒有提供取消指定預設版本的指令，如果要取消，就只要把 .python-version 檔刪除即可。  
+
+
+
