@@ -8,7 +8,7 @@ Python 進階實戰開發
 
 ---
 
-# 讓 code-runner 輸出到 Terminal
+# 讓 code-runner 輸出到 Terminal (Python)
 GitHub Copilot 只有 `#terminalLastCommand`  
 無法取得 【輸出】視窗的訊息  
 所以調整 `code-runner.runInTerminal`  
