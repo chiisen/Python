@@ -3,6 +3,11 @@ Python 進階實戰開發
 
 ---
 
+## 更新 uv 自己的版本
+```shell
+uv self update # 更新 uv
+```
+
 # 使用 uv 管理 Python 環境
 [使用 uv 管理 Python 環境](./docs/uv/uv.md)
 
